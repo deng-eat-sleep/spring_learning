@@ -1,0 +1,24 @@
+server:
+  port: 8088
+spring:
+
+  #rabbtMq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-returns: true
+
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
+        acknowledge-mode: manual
+
+
+
+rabbitmq:
+  queue:
+    msg: spring-boot-queue-msg
+    user: spring-boot-queue-user
